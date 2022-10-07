@@ -1,0 +1,36 @@
+<div class="w-full">
+  <div class="flex justify-center">
+    <div class="max-w-[470px]">
+    <div class="flex relative justify-center border-b-[1px]">
+      <button class="absolute top-3 left-2">x</button>
+      <h2 class=" py-3 text-center font-bold">Log in</h2>
+    </div>
+
+    <p class="text-xl font-semibold py-4">Welcome to Airbnb</p>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="field w-full">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"rounded-t-md border-gray-400 w-full py-3", placeholder:"Email" %>
+      </div>
+
+      <div class="field mb-3">
+        <%= f.password_field :password, autocomplete: "current-password", class:"rounded-b-md border-gray-400 w-full py-3", placeholder:"Password" %>
+      </div>
+
+      <% if devise_mapping.rememberable? %>
+        <div class="field py-2">
+          <%= f.check_box :remember_me %>
+          <%= f.label :remember_me %>
+        </div>
+      <% end %>
+
+      <p class="text-xs py-3">We’ll call or text you to confirm your number. Standard message and data rates apply. <span class="underline font-bold">Privacy Policy</span></p>
+
+      <div class="actions bg-primary-color text-white flex justify-center py-2 font-semibold rounded-md mb-3">
+        <%= f.submit "Continue" %>
+      </div>
+    <% end %>
+
+    <%= render "devise/shared/links" %>
+    </div>
+  </div>
+</div>
