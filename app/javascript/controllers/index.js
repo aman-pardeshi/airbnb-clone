@@ -3,6 +3,8 @@
 // ./bin/rails generate stimulus controllerName
 
 import { application } from './application';
-
 import HeaderController from './header_controller';
+import ModalController from './modal_controller';
+
 application.register('header', HeaderController);
+application.register('modal', ModalController);

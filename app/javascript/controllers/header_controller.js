@@ -19,9 +19,10 @@ export default class extends Controller {
     }
 
     dropdownButton.addEventListener('click', toggleDropdownMenu);
+
     document.addEventListener('click', (event) => {
       if (!dropdownButton.contains(event.target)) {
-        toggleDropdownMenu();
+        closeMenu();
       }
     });
   }
